@@ -1,0 +1,85 @@
+{% comment %} <html>
+<head>
+
+	<title>複習</title>
+
+</head>
+<body>
+
+	<a href="/create">創建</a>
+	<ul>
+	{%for book in booklist%}
+	<li>{{book.btitle}}--<a href="/delete/{{book.id}}">删除</a></li>
+	{%endfor%}
+	</ul>
+	
+</body>
+</html> {% endcomment %}
+
+{% comment %} <html>
+<head>
+
+	<title>首頁</title>
+
+</head>
+<body>
+
+	request的method属性：<br/>
+	<a href='/method_show/'>get方式</a><br/>
+
+	<form method="post" action="/method_show/">
+		<input type="submit" value="post方式">
+	</form>
+	
+	<br/>
+
+</body>
+</html> {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+</head>
+
+<body>
+
+	request对象的method属性：<br/>
+	
+	<a href='/method_show/'>get方式</a><br/>
+	
+	<form method="post" action="/method_show/">
+	
+	<input type="submit" value="post方式">
+	
+	</form>
+	
+	<br/>
+	
+	兩種方式提交數據：
+	
+	get:<br/>
+	<a href="/show_reqarg/?a=1哭&b=2鬧&c=3尚優雅">get方式提交數據</a><br/>
+
+	post:<br/>
+	<form method="post" action="/show_reqarg/">
+        {% csrf_token %}
+		姓名：<input type="text" name="name"><br/>
+		性別：
+			男<input type="radio" name="gender" value="男"/>
+			女<input type="radio" name="gender" value="女"/><br/>
+		喜歡的東西：	
+			<input type="checkbox" name="hobby" value="蘋果"/>蘋果
+			<input type="checkbox" name="hobby" value="柳橙"/>柳橙
+			<input type="checkbox" name="hobby" value="百香果"/>百香果<br>
+			<input type="submit" value="提交">
+	</form>
+	
+	<br/>
+	
+</body>
+</html>

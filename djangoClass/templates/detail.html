@@ -1,0 +1,21 @@
+<html>
+<head>
+
+	<title>詳細頁</title>
+
+</head>
+<body>
+
+	{#輸出標題#}
+	<h1>{{book.btitle}}</h1>
+
+	<ul>
+		{#找到百科的寶貝#}
+		{%for pocket in pockets%}
+			{#輸出寶貝的姓名及描述#}
+			<li>ID {{pocket.pbook_id}}: {{pocket.pname}}   ---   {{pocket.pcomment}}</li>
+		{%endfor%}
+	</ul>
+	
+</body>
+</html>

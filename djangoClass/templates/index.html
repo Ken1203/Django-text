@@ -1,0 +1,19 @@
+<html>
+<head>
+
+	<title>神奇百科</title>
+
+</head>
+<body>
+
+	<h1>{{title}}</h1>
+	{%for book in booklist%}
+	
+	<li>
+	<a href="/{{book.id}}/">{{book.btitle}}</a>
+	</li>
+	
+	{%endfor%}
+
+</body>
+</html>

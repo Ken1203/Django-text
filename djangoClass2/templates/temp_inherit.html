@@ -1,0 +1,10 @@
+{%extends 'inherit_base.html'%}
+
+{%block qu2%}
+<ul>
+<h1>{{title}}</h1>
+{%for book in list%}
+<li>{{book.btitle}}</li>
+{%endfor%}
+</ul>
+{%endblock qu2%}

@@ -1,0 +1,28 @@
+<html>
+<head>
+
+	<title>json</title>
+	
+	<script src="/static/jquery-1.12.4.min.js"></script>
+	
+	<script>
+		$(function () {
+			$('#btnJson').click(function () {
+				$.get('/json2/',function (data) {
+                    console.log(data['h2']);
+					ul=$('#jsonList');
+					ul.append('<li>'+data['h1']+'</li>')
+					ul.append('<li>'+data['h2']+'</li>')
+				})
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+	<input type="button" id="btnJson" value="獲取json數據">
+	<ul id="jsonList"></ul>
+	
+</body>
+</html>
